@@ -1,0 +1,13 @@
+Product,Category,Revenue,Quantity,Region,Date
+Laptop,Electronics,5000,2,North,2024-01-01
+Mouse,Electronics,50,15,North,2024-01-05
+Keyboard,Electronics,100,10,South,2024-01-10
+Monitor,Electronics,400,3,East,2024-01-15
+Desk,Furniture,300,5,North,2024-01-20
+Chair,Furniture,200,8,South,2024-01-25
+Lamp,Furniture,150,12,East,2024-02-01
+Phone,Electronics,8000,1,West,2024-02-05
+Tablet,Electronics,3000,4,North,2024-02-10
+Headphones,Electronics,200,7,South,2024-02-15
+Monitor Stand,Furniture,80,6,East,2024-02-20
+Printer,Electronics,400,2,West,2024-02-25

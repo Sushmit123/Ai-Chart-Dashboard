@@ -1,0 +1,77 @@
+basePath: /api
+host: localhost:8080
+info:
+  contact: {}
+  description: API for generating charts from data using AI
+  title: AI Chart Dashboard API
+  version: "1.0"
+paths:
+  /dashboard/{id}:
+    get:
+      description: Retrieve a generated dashboard and its associated charts
+      parameters:
+      - description: Dashboard ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Dashboard found
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Dashboard not found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get dashboard by ID
+      tags:
+      - dashboard
+  /dashboard/generate:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Upload a CSV or Excel file and optionally provide a prompt to generate
+        charts
+      parameters:
+      - description: CSV or Excel file
+        in: formData
+        name: file
+        required: true
+        type: file
+      - description: Chart requirement prompt (optional - if empty, AI will suggest
+          charts)
+        in: formData
+        name: prompt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Dashboard generated successfully
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal server error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Generate charts from uploaded file
+      tags:
+      - dashboard
+schemes:
+- http
+swagger: "2.0"

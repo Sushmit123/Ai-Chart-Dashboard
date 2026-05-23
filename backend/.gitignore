@@ -1,0 +1,7 @@
+.env
+.env.local
+tmp/
+uploads/
+*.exe
+*.log
+.air.toml
